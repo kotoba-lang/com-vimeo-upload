@@ -23,7 +23,7 @@
   but every step is exposed because resuming is a caller-side decision.
 
   Vimeo's API is versioned through Accept, not the URL — `application/vnd.vimeo.*+json;version=3.4`."
-  (:require [clojure.string :as str]))
+  (:require [kotoba.lang.text :as str]))
 
 (def default-base-url "https://api.vimeo.com")
 (def default-api-version "3.4")
@@ -58,8 +58,8 @@
 (defn- header-value
   [resp name*]
   (let [hs (or (:response-headers resp) (:headers resp))
-        target (str/lower-case name*)]
-    (some (fn [[k v]] (when (= target (str/lower-case (name k))) v)) hs)))
+        target (str/lower name*)]
+    (some (fn [[k v]] (when (= target (str/lower (name k))) v)) hs)))
 
 (defn create-video!
   "POST /me/videos. Returns {:uri \"/videos/123\" :upload-link .. :link ..}.
