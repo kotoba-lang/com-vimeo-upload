@@ -41,8 +41,8 @@ upload rather than the start.
 ## Test
 
 ```bash
-nbb run_tests.cljs     # primary
-clojure -M:test        # JVM, secondary
+kbb --backend sci run_tests.cljk     # primary
+kbb -M:test        # JVM, secondary
 ```
 
 6 tests / 15 assertions, green on both.

@@ -1,5 +1,5 @@
 (ns run-tests
-  "nbb test runner (primary path; `clojure -M:test` is the JVM secondary)."
+  "nbb test runner (primary path; `kbb -M:test` is the JVM secondary)."
   (:require [cljs.test :as t]
             [vimeo-upload.client-test]))
 
